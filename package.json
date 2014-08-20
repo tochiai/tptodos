@@ -1,0 +1,20 @@
+{
+  "name": "tptodos",
+  "version": "0.0.0",
+  "description": "Print incomplete toy problems",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tochiai/tptodos.git"
+  },
+  "author": "Tyler Ochiai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tochiai/tptodos/issues"
+  },
+  "homepage": "https://github.com/tochiai/tptodos"
+}
