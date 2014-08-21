@@ -11,10 +11,24 @@ var github = new GitHubApi({
 });
 
 prompt.start();
-prompt.get(['username', 'password'], function (err, result) {
+prompt.get(['username', 'password'], function (err, creds) {
   github.authenticate({
     type: "basic",
-    username: result.username,
-    password: result.password
+    username: creds.username,
+    password: creds.password
+  });
+  prompt.get(['org', 'repo', 'number'], function(err, pullInfo){
+    var message = {
+      user: pullInfo.org,
+      repo: pullInfo.repo,
+      number: pullInfo.number
+    };
+    github.pullRequests.get(message, function(err, data){
+      if(err){
+        throw err;
+      } else {
+        console.log(data);
+      }
+    });
   });
 });
